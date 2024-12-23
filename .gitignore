@@ -1,0 +1,6 @@
+public
+*.env
+.idea
+logs
+logs/app.logs
+node_modules

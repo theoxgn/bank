@@ -1,0 +1,311 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Dokumentasi",
+    "description": "Ini adalah Endpoint dari BackEnd",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "Endpoint to login and get jwt token from users",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "user login",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/doLoginUser"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/upload-lokal": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "description": "Endpoint to upload file with local storage",
+        "parameters": [
+          {
+            "name": "upload",
+            "in": "body",
+            "description": "Upload file lokal",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/doUploadFileLokal"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/upload-s3": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "description": "Endpoint to upload file with s3 storage",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/getUserAll": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint to get all users",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/generateUserAllPDF": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint to get all users and generate to pdf",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/getConfig": {
+      "get": {
+        "tags": [
+          "Helper"
+        ],
+        "description": "Endpoint to get config",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/exportExcelUser": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Endpoint to get all users and generate to excel",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/ronda/createRonda": {
+      "post": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/ronda/getAllRonda": {
+      "get": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/ronda/getRonda": {
+      "get": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/ronda/updateRonda/{id}": {
+      "put": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/ronda/deleteRonda/{id}": {
+      "delete": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/ronda/findAllRonda": {
+      "get": {
+        "tags": [
+          "Testing"
+        ],
+        "description": "Endpoint to create simple CRUD for learning node js",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/autocompleteStreet": {
+      "post": {
+        "tags": [
+          "Helper"
+        ],
+        "description": "Endpoint to get auto complate google maps",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/store": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/get": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
